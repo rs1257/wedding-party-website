@@ -1,0 +1,424 @@
+@import './Colours.scss';
+@import './Sizes.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'DancingScript';
+  src: local('DancingScript'), url(./fonts/DancingScript-VariableFont_wght.ttf) format('truetype');
+  font-display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DancingScript', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+h1 {
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Contains all Routes, same level as header and footer */
+.content {
+  margin-top: $header-height; 
+}
+
+.login, .register, .rsvp, .settings {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.login input, .register input, .rsvp input, .rsvp select, .rsvp textarea, .settings input, .gallery-access-form input {
+  align-self: center;
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: $default-input-colour 2px solid;
+}
+
+.login input:focus, .register input:focus, .rsvp input:focus, .rsvp select:focus, .rsvp textarea:focus, .settings input:focus, .gallery-access-form input:focus {
+  outline: $primary-colour auto 1px;
+}
+
+.login input:focus-within, .register input:focus-within, .rsvp input:focus-within, .rsvp select:focus-within, .rsvp textarea:focus-within, .settings input:focus-within, .gallery-access-form input:focus-within {
+  border: $primary-colour 2px solid;
+}
+
+.login button, .register button, .rsvp button, .settings button, .gallery-upload-form > button, .gallery-access-form button, .img-download-all-btn {
+  align-self: center;
+  width: 8rem;
+  height: 2.5rem;
+  box-sizing: border-box;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: solid 3px $primary-colour;
+  background: $btn-background-colour;
+  vertical-align: middle;
+}
+
+.login button:hover, .register button:hover, .rsvp button:hover, .settings button:hover, .gallery-upload-form > button:hover, .gallery-access-form button:hover, .img-download-all-btn:hover {
+  background: $primary-colour;
+}
+
+.register .is-invalid, .login .is-invalid, .rsvp .is-invalid, .settings .is-invalid {
+  border: solid 3px $validation-error-colour;
+  outline: none;
+}
+
+#homepage {
+  height: $content-height;
+}
+
+#homepage, #infopage, #rsvppage, #imageuploadpage, #gallerypage {
+  padding: 2rem;
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.preview img {
+  margin: auto;
+  height: 150px;
+  width: 275px;
+  object-fit: contain;
+  border:4px transparent solid;
+  opacity: 1
+}
+
+.anchor {
+  position: relative;
+}
+
+.anchor a {
+  position: absolute;
+  left: 0px;
+  top: -$header-height;
+}
+
+.remove-btn {
+  border-radius: 50%;
+  border: 2px solid transparent;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  background: lightblue;
+  color: green;
+  text-align: center;
+  vertical-align: middle;
+
+  right: 0.5rem;
+  top: 0.5rem;
+  outline: none;
+}
+
+.remove-btn:hover {
+  filter: brightness(120%);
+  border: 2px solid green;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.custom-file-upload:hover {
+  border: 1px solid black;
+  background-color: $primary-colour;
+}
+
+#homepage h1 {
+  padding: 3rem;
+  font-size: 6rem;
+}
+
+#homepage {
+  background-image:
+    repeating-linear-gradient($linear-gradient-colour, $linear-gradient-colour),
+    url("assets/homepage-cover-large.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.successful-upload span {
+  color: green;
+}
+
+.successful-upload {
+  display: none;
+}
+
+.leaflet-container {
+  height: 300px;
+  width: 300px;
+}
+
+.card {
+  box-shadow: 0 0 6px 6px rgba(0,0,0,0.2);
+  margin: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
+  width: 40%;
+}
+
+.card-item {
+  display: inline-block;
+  padding: 2rem;
+}
+
+.card label {
+  padding: 0 0.5rem;
+}
+
+.card input, .card textarea, .card select {
+  align-self: center;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  border: $default-input-colour 2px solid;
+}
+
+.actions button {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  outline: none;
+  padding: 1rem;
+}
+
+.cross {
+  color: $cross-colour
+}
+
+.tick {
+  color: $tick-colour
+}
+
+.edit {
+  color: $edit-colour;
+}
+
+.actions button:hover {
+  filter: brightness(170%);
+}
+
+.attending-yes {
+  border: 4px solid $yes-border-colour;
+}
+
+.attending-no {
+  border: 4px solid $no-border-colour;
+}
+
+.attending-undefined {
+  border: 4px solid $undefined-border-colour;
+}
+
+.image-preview {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $linear-gradient-colour;
+  z-index: 1001;
+}
+
+.image-preview-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-preview img {
+  height: 80%;
+  width: 60%;
+  object-fit: contain;
+}
+
+.btn-group {
+  position: fixed;
+  display: flex;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-btn {
+  height: 2rem;
+  width: 4rem;
+  margin: 0px 1rem;
+}
+
+.img-download-btn {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  color: green;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  background: lightblue;
+  transition: all 0.5s ease;
+}
+
+.img-download-btn:hover {
+  filter: brightness(120%);
+  border: 2px solid $primary-colour;
+}
+
+.img-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.2rem;
+  margin: 1rem;
+  position: relative;
+  border: 0.2rem solid transparent;
+  background-color: white;
+}
+
+.img-card:hover {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.6);
+  transition: all ease 0.5s;
+  border-color: $primary-colour;
+}
+
+.input-label {
+  padding: 1rem;
+}
+
+.select-container, .input-container, .textarea-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 70%;
+
+  .button-container {
+    justify-content: center;
+  }
+}
+
+section > .anchor:nth-child(even) {
+  background-color:$even-page-colour;
+}
+
+section > .anchor:nth-child(odd) {
+  background-color: $odd-page-colour;
+}
+
+progress {
+  height: 2rem;
+  vertical-align: middle;
+}
+
+#map a {
+  display: none;
+}
+
+.filter-btn-group {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.filter {
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  appearance: none;
+  background-color: #0477c2;
+  border: 2px solid black;
+  outline: none;
+}
+
+.filter:hover {
+  filter: brightness(70%);
+  border: 2px solid white;
+}
+
+.rsvp-tick {
+  color: green;
+  font-size: 4rem;
+}
+
+.rsvp-submitted {
+  font-size: 2rem;
+}
+
+#map, .iframe-map {
+  width: 600px;
+  height: 600px;
+  margin: 1rem auto;
+};
+
+.card .input-container, .card .select-container, .card .textarea-container {
+  width: 100%;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+.summary-card {
+  margin: 1rem auto;
+  width: 80%
+}
+
+.not-found {
+  padding: 1rem;
+}
+
+.not-found h2 {
+  padding: 0.25rem;
+}
+
+#infopage p {
+  font-size: 1.8rem;
+}
+
+// ################################################################
+// Needs to be at the bottom or it gets overwritten by other styles
+@import './MediaQueries.scss';
+// ################################################################

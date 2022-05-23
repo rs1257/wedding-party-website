@@ -1,0 +1,13 @@
+@import '../../Colours.scss';
+@import '../../Sizes.scss';
+
+#header {
+  background: $primary-colour;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}

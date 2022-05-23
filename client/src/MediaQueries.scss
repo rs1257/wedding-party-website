@@ -1,0 +1,116 @@
+@import './Colours.scss';
+
+@media(max-width: 1000px) {
+  #homepage h1 {
+    font-size: 5rem;
+  }
+
+  .countdown ul li {
+    font-size: 1.5rem;
+  }
+
+  #homepage {
+    background-image:
+      repeating-linear-gradient($linear-gradient-colour, $linear-gradient-colour),
+      url("assets/homepage-cover-medium.jpg");
+  }
+
+  #map, .iframe-map {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media(max-width: 750px) {
+  #homepage h1 {
+    font-size: 4rem;
+  }
+
+  .countdown ul li {
+    font-size: 1.2rem;
+  }
+
+  .countdown ul li span {
+    font-size: 3.5rem;
+  }
+
+  #homepage {
+    background-size: 100% 100%;
+  }
+
+  #map, .iframe-map {
+    width: 400px;
+    height: 400px;
+  }
+
+  .input-container, .select-container, .textarea-container {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .input-label {
+    padding: 0.5rem;
+  }
+
+  .login input, .register input, .rsvp input, .rsvp select, .rsvp textarea, .settings input, .gallery-access-form input {
+    width: 70%;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+@media(max-width: 550px) {
+  #map, .iframe-map {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media(max-width: 450px) {
+
+  #homepage h1 {
+    font-size: 3.2rem;
+  }
+
+  .countdown ul li {
+    font-size: 1rem;
+  }
+
+  .countdown ul li span {
+    font-size: 2.5rem;
+  }
+
+  #map, .iframe-map {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media(max-width: 360px) {
+
+  #homepage h1 {
+    font-size: 2.5rem;
+  }
+
+  .countdown ul li {
+    font-size: 0.8rem;
+  }
+
+  .countdown ul li span {
+    font-size: 2rem;
+  }
+
+  #map, .iframe-map {
+    display: none;
+  }
+
+}
+
+@media(max-width: 310px) {
+  .countdown {
+    display: none;
+  }
+}

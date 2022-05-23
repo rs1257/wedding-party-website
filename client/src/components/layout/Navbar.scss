@@ -1,0 +1,51 @@
+@import './../../Colours.scss';
+
+#navbar {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    text-decoration: none;
+    color: $nav-links-colour;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $secondary-colour;
+    }
+  }
+}
+
+.nav-link {
+  position: relative;
+
+  &::before {
+    transition: 300ms;
+    height: 3px;
+    content: "";
+    position: absolute;
+    background-color: $secondary-colour;
+  }
+
+  &.active {
+    color: $secondary-colour;
+  }
+}
+
+.nav-link-underline {
+  &::before {
+    width: 100%;
+    opacity: 0;
+    bottom: 0;
+  }
+
+  &:hover {
+    &::before {
+    opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../Colours.scss';
+@import '../../Sizes.scss';
+
+#footer {
+  background: $primary-colour;
+  height: $footer-height;
+  min-height: $footer-height;
+  z-index: 1000;
+  color: $footer-text-colour;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+    color:$footer-brand-colour;
+
+    &:hover {
+      color: $secondary-colour;
+    }
+  }
+}

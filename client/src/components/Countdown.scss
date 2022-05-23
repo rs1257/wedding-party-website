@@ -1,0 +1,21 @@
+@import './../Colours.scss';
+
+.countdown ul li {
+  display: inline-block;
+  font-size: 2rem;
+  list-style-type: none;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+
+.countdown ul li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.countdown {
+  color: $countdown-text-colour;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+}
